@@ -40,6 +40,8 @@ class Employee {
   } 
 
   makeWidget(){
+    super.makeWidget()
+    return '$(this.first_name} ${this.last_name} Widget'
 
   } 
 }
@@ -109,23 +111,23 @@ class ProgressiveManager extends Manager {
 
   hire(employee) {
     super.hire(employee);
-    this.reports.length === 0 ? this.title="Not a manager":
-      this.reports.length >= 1 && this.reports.length <= 3 ? this.title="Barely Manager":
+    this.reports.length === 0 ? this.title = "Not a manager":
+      this.reports.length >= 1 && this.reports.length <= 3 ? this.title = "Barely Manager":
         this.reports.length >= 4 && this.reports.length <= 10 ? this.title = "Mostly Manager":
           this.reports.length >= 11 && this.reports.length <= 50 ? this.title = "Manager":
-            this.reports.length >= 51 && this.reports.length <= 100 ? this.title = "Mostly Plus":
-              this.reports.length >= 101 && this.title <= 10 ? this.title = "Bestest Manager":
+            this.reports.length >= 51 && this.reports.length <= 100 ? this.title = "Manager Plus":
+              this.reports.length >= 101 ? this.title = "Bestest Manager":
                 null;
   }
 
   fire(employee) {
     super.fire(employee);
     this.reports.length === 0 ? this.title = "Not a manager":
-      this.reports.length >= 1 && this.reports.length <= 3 ? this.title="Barely Manager":
+      this.reports.length >= 1 && this.reports.length <= 3 ? this.title = "Barely Manager":
         this.reports.length >= 4 && this.reports.length <= 10 ? this.title = "Mostly Manager":
           this.reports.length >= 11 && this.reports.length <= 50 ? this.title = "Manager":
-            this.reports.length >= 51 && this.reports.length <= 100 ? this.title = "Mostly Plus":
-              this.reports.length >= 101 && this.title <= 10 ? this.title = "Bestest Manager":
+            this.reports.length >= 51 && this.reports.length <= 100 ? this.title = "Manager Plus":
+              this.reports.length >= 101 ? this.title = "Bestest Manager":
                 null;
     this.bonus+=100;            
   }
@@ -176,11 +178,11 @@ class Machine {
   }
 
   reboot(){
-    if(this.needs_reboot = true;)
+    if(this.needs_reboot = true);
   }
 
   reboot(){
-    if(this.needs_reboot === true){
+    if(this.needs_reboot === true) {
       return () => {
         this.wear_and_tear_count -= 10;
         this.needs_reboot = false;
